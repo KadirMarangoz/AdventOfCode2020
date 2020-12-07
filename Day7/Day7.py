@@ -20,12 +20,17 @@ def find_gold(dict_, colour):
             return True
     return False
 
+def flatten(dict_, colour):
+    count = 1
+    if len(dict_[colour]) == 0:
+        return count
 
-count = 0
-for colour in dict_:
-    if find_gold(dict_, colour):
-        count += 1
+    for key in dict_[colour]:
+        count += dict_[colour][key] * flatten(dict_, key)
 
+    return count
+
+print(flatten(dict_, "shiny gold") - 1)
 
 
 
