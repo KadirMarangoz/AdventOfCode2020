@@ -9,8 +9,6 @@ class KaMa:
         self.value = value
     def __add__(self, b):
         return KaMa(self.value * b.value)
-    def __sub__(self, b):
-        return KaMa(self.value + b.value)
     def __mul__(self, b):
         return KaMa(self.value + b.value)
 
